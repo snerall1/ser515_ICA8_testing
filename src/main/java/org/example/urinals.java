@@ -3,6 +3,7 @@ package org.example;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -10,7 +11,8 @@ public class urinals {
 
     public static void main(String[] args) throws IOException {
         //author: Sai Sunil Neralla
-        System.out.println("Press 1 for Keyboard input and 2 for file input");
+        System.out.println("Press 1 for Keyboard input or ");
+        System.out.println("Press 2 for File input: ");
         Scanner sc= new Scanner(System.in);
         int x=Integer.parseInt(sc.nextLine());
         switch(x)
@@ -24,6 +26,7 @@ public class urinals {
                      }
                      break;
             case 2: String[] stringsArray = readFile();
+                    System.out.println(Arrays.deepToString(stringsArray));
                     int[] result = new int[stringsArray.length];
                       for(int j=0;j<stringsArray.length;j++)
                       {
@@ -44,7 +47,7 @@ public class urinals {
 
     public static int countUrinals(String str) {
         int count=0;
-        for(int i=0; i<str.length();i++)
+        for(int i=0; i<str.length();i++)     // this method counts the total no. of possible urinals
         { char pos=str.charAt(i);
             if(str.contains("11"))
                 return -1;
@@ -80,17 +83,17 @@ public class urinals {
         try(BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\snerall1\\Documents\\SER_515\\urinal.dat"))) {
             List<String> strings = new ArrayList<>();
             br.lines().forEach(c -> strings.add(c));
-            stringsArray = strings.toArray(new String[strings.size()]);
+            stringsArray = strings.toArray(new String[strings.size()]);    //reads the input from the file and returns a String array
         }
         return  stringsArray;
         }
 
-    public static void writeFile(int[] result) throws IOException{
+    public static boolean writeFile(int[] result) throws IOException{
         String fileName = "rule";
 
         File file = new File(fileName+ ".txt");
         int count = 0;
-        while(!file.createNewFile())
+        while(!file.createNewFile())                  //writes output to the file
         {
             count++;
             file = new File(fileName+ String.valueOf(count) +".txt");
@@ -106,6 +109,6 @@ public class urinals {
         FileWriter fw = new FileWriter(file);
         fw.write(content);
         fw.close();
-
+        return true;
     }
 }
