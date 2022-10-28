@@ -16,7 +16,9 @@ void countUrinalsTest()
  @Test
  void goodStringTest()
  {
-  System.out.println("Not yet Implemented");
+  Assertions.assertEquals(true, urinals.goodString("10001"));
+  System.out.println("====== Sai Sunil Neralla == TEST TWO EXECUTED =======");
+
  }
 
 }
