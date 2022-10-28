@@ -61,7 +61,6 @@ public class urinals {
             else
             { char prev=str.charAt(i-1);
                 char next=str.charAt(i+1);
-
                 if(pos=='0' && prev=='0' && next=='0')
                 {
                     count++;
