@@ -9,8 +9,14 @@ public class urinalsTest {
 @Test
 void countUrinalsTest()
  {
-  Assertions.assertEquals(false, true);
+  Assertions.assertEquals(1, urinals.countUrinals("10001"));
   System.out.println("====== Sai Sunil Neralla == TEST ONE EXECUTED =======");
+ }
+
+ @Test
+ void goodStringTest()
+ {
+  System.out.println("Not yet Implemented");
  }
 
 }
