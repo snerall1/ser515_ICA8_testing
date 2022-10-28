@@ -39,7 +39,9 @@ void countUrinalsTest()
 
  @Test
  void writeFileTest() throws IOException {
-
+ int[] dummyResult = {1,2,3,4,5,6,7,8,9,10};
+  Assertions.assertEquals(true,urinals.writeFile(dummyResult));
+  System.out.println("====== Sai Sunil Neralla == writeFileTest EXECUTED =======");
  }
 
 

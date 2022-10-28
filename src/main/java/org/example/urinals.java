@@ -3,7 +3,6 @@ package org.example;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -26,7 +25,6 @@ public class urinals {
                      }
                      break;
             case 2: String[] stringsArray = readFile();
-                    System.out.println(Arrays.deepToString(stringsArray));
                     int[] result = new int[stringsArray.length];
                       for(int j=0;j<stringsArray.length;j++)
                       {
